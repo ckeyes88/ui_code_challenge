@@ -213,6 +213,11 @@ input:focus {
     outline: none;
 }
 
+.input-col-right {
+    float: right;
+
+}
+
 /* Button Styles */
 .btn {
     border: 0.5px solid rgba(0, 0, 0, 0.2);
@@ -239,4 +244,6 @@ input:focus {
     color: #ffffff;
     background-color: #78af3a;
 }
+
+
 
