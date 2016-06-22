@@ -45,6 +45,7 @@
                         <input id="address2-input" type="text" ng-value="location.address2">
                         <div class="inline-form">
                             <label for="state">State</label>
+
                             <select id="state">
                                 <option ng-repeat="state in states"
                                         ng-selected="state.abbreviation === location.state">{{state.abbreviation}}</option>
@@ -64,33 +65,7 @@
             </div>
 
             <div class="accordion__tab-content" ng-show="isOpenTab('newTab')">
-                <form>
-                    <div class="double-col">
-                        <label for="new-location">Location Name</label>
-                        <input id="new-location" type="text" ng-value="location.location_name">
-                    </div>
 
-                    <div class="input-col">
-                        <label for="new-address">Address</label>
-                        <input id="new-address" type="text" ng-value="location.address">
-
-                        <label for="new-city">City</label>
-                        <input id="new-city" type="text" ng-value="location.city">
-                    </div>
-
-                    <div class="input-col">
-                        <label for="new-address2">Address 2</label>
-                        <input id="new-address2" type="text" ng-value="location.address2">
-                        <div class="inline-form">
-                            <label for="state">St.</label>
-
-                            <select id="new-state">
-                                <option ng-repeat="state in states">{{state.abbreviation}}</option>
-                            </select>
-                        </div>
-                    </div>
-
-                </form>
             </div>
         </div>
     </div>
