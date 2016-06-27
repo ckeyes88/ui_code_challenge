@@ -257,6 +257,7 @@ body {
     border: none;
     padding-bottom: 5px;
     border-bottom: 2px solid #b9b9b9;
+    border-radius: 0;
 }
 .panel label {
     font-size: 12px;
