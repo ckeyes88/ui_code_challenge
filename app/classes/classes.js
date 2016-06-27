@@ -4,13 +4,14 @@ angular.module('myApp.classes', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/classes', {
-            templateUrl: 'classes/classes.html',
+            templateUrl: '/classes/classes.html',
             controller: 'ClassesCtrl'
         });
     }])
 
     .controller('ClassesCtrl', ['$scope', function ($scope) {
-        $scope.stateSelect = {};
+        $scope.stateSelect = {abbreviation: "St."};
+        $scope.selectedLocation = {location_name: "Select Location..."};
         $scope.locations = [
             {
                 location_name: 'Seattle, 4th & Pike',

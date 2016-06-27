@@ -5,8 +5,10 @@ var myApp = angular.module('myApp', [
     'ngRoute',
     'myApp.classes',
     'myApp.view2',
-    'myApp.version'
+    'myApp.version',
+    'ngDropdowns'
 ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+
     $locationProvider.html5Mode(true);
 
     $routeProvider.otherwise({ redirectTo: '/classes' });

@@ -18,48 +18,55 @@
           type='text/css'>
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/angular-dropdowns/dist/angular-dropdowns.min.css">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
 
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="app-flex.css">
     <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body ng-cloak>
-<h2 class="logo"><a href="/">Studio<strong>HQ</strong></a></h2>
-<nav>
-    <ul class="menu">
-
-        <li><a href="#!"><i class="fa fa-desktop"></i>&nbsp;&nbsp;Dashboard</a></li>
-        <li><a href="classes"><i class="fa fa-book"></i>&nbsp;&nbsp;Classes</a></li>
-        <li><a href="#!"><i class="fa fa-users"></i>&nbsp;&nbsp;Students</a></li>
-        <li><a href="#!"><i class="fa fa-credit-card"></i>&nbsp;&nbsp;Payments</a></li>
-        <li><a href="#!"><i class="fa fa-user"></i>&nbsp;&nbsp;Staff</a></li>
-        <li><a href="#!"><i class="fa fa-cog"></i>&nbsp;&nbsp;Settings</a></li>
-        <li><a href="#!"><i class="fa fa-sign-out"></i>&nbsp;&nbsp;Log Out</a></li>
-    </ul>
-</nav>
-
-<!--[if lt IE 7]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a
-        href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]-->
-
 <div class="container">
-    <div ng-view></div>
+
+    <nav class="main-nav">
+        <h2><a href="/">Studio<strong>HQ</strong></a></h2>
+        <ul>
+
+            <li><a ng-href="view2"><i class="fa fa-desktop"></i>Dashboard</a></li>
+            <li><a ng-href="classes"><i class="fa fa-book"></i>Classes</a></li>
+            <li><a ng-href="view2"><i class="fa fa-users"></i>Students</a></li>
+            <li><a ng-href="view2"><i class="fa fa-credit-card"></i>Payments</a></li>
+            <li><a ng-href="view2"><i class="fa fa-user"></i>Staff</a></li>
+            <li><a ng-href="view2"><i class="fa fa-cog"></i>Settings</a></li>
+            <li><a ng-href="view2"><i class="fa fa-sign-out"></i>Log Out</a></li>
+        </ul>
+    </nav>
+
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a
+            href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="main-content">
+        <div ng-view></div>
+    </div>
+
 </div>
-
-
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-dropdowns/dist/angular-dropdowns.js"></script>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 
 
 <script src="app.js"></script>
 
+
 <script src="classes/classes.js"></script>
+
 <script src="view2/view2.js"></script>
 
 <script src="components/version/version.js"></script>

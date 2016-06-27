@@ -1,15 +1,16 @@
 <div class="header">
-    <label for="location">Happy Dance & Music | </label>
-    <select id="location">
-        <option ng-repeat="location in locations">{{location.location_name}}</option>
-    </select>
+    <h5>Happy Dance and Music | </h5>
+    <div dropdown-select="locations" dropdown-model="selectedLocation"
+         dropdown-item-label="location_name"></div>
+
+
 </div>
 <div class="panel">
+
     <div class="panel-title">
         <h2>Studio Settings</h2>
     </div>
-
-    <div class="panel-nav">
+    <nav class="panel-nav">
         <ul>
             <li><a href="#">Company</a></li>
             <li><a href="#">Locations</a></li>
@@ -18,7 +19,7 @@
             <li><a href="#">Billing Info</a></li>
             <li><a href="#">Merchant Account</a></li>
         </ul>
-    </div>
+    </nav>
     <div class="accordion__container">
         <div class="accordion__tab" ng-repeat="location in locations">
             <div class="accordion__tab-title" ng-click="openTab(location.location_name)">
@@ -26,37 +27,58 @@
                     ng-class="isOpenTab(location.location_name) ? 'fa fa-angle-up' : 'fa fa-angle-down'"></i>
             </div>
             <div class="accordion__tab-content" ng-show="isOpenTab(location.location_name)">
-                <form>
-                    <div class="double-col">
-                        <label for="location-input">Location Name</label>
-                        <input id="location-input" type="text" ng-value="location.location_name">
-                    </div>
-
-                    <div class="input-col">
-                        <label for="address-input">Address</label>
-                        <input id="address-input" type="text" ng-value="location.address">
-
-                        <label for="city-input">City</label>
-                        <input id="city-input" type="text" ng-value="location.city">
-                    </div>
-
-                    <div class="input-col">
-                        <label for="address2-input">Address 2</label>
-                        <input id="address2-input" type="text" ng-value="location.address2">
-                        <div class="inline-form">
-                            <label for="state">State</label>
-
-                            <select id="state">
-                                <option ng-repeat="state in states"
-                                        ng-selected="state.abbreviation === location.state">{{state.abbreviation}}</option>
-                            </select>
-
-
-                            <input id="zip" type="text" placeholder="Zip">
+                <form id="location-form">
+                    <div class="left-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="location-input">Location Name</label>
+                                <input id="location-input" type="text"
+                                       ng-value="location.location_name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="address-input">Address</label>
+                                <input id="address-input" type="text" ng-value="location.address">
+                            </div>
+                            <div class="form-group">
+                                <label for="address2-input">Address 2</label>
+                                <input id="address2-input" type="text" ng-value="location.address2">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city-input">City</label>
+                                <input id="city-input" type="text" ng-value="location.city">
+                            </div>
+                            <div class="form-group">
+                            <div dropdown-select="states" dropdown-model="stateSelect"
+                                 dropdown-item-label="abbreviation"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="zip">Zip</label>
+                                <input id="zip" type="text" ng-value="location.zip">
+                            </div>
                         </div>
                     </div>
 
-
+                    <div class="right-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="email" placeholder="Contact Email"/>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" placeholder="Reply to Email"/>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="tel" placeholder="Phone"/>
+                            </div>
+                        </div>
+                    </div>
                 </form>
 
             </div>
@@ -72,7 +94,8 @@
         </div>
     </div>
     <div class="btn-group">
-        <button class="btn btn-cancel">Cancel</button>
-        <button class="btn btn-submit">Save Changes</button>
+        <button type="reset" class="btn btn-cancel">Cancel</button>
+        <button type="submit" class="btn btn-submit">Save Changes</button>
     </div>
 </div>
+
